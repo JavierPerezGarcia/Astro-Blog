@@ -1,10 +1,15 @@
 ---
 const pageTitle = "Mi blog de Astro aprendizaje";
+
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
 ---
 
-<a href="/">Inicio</a>
+<!-- <a href="/">Inicio</a>
 <a href="/about/">Sobre mi</a>
-<a href="/blog/">Blog</a>
+<a href="/blog/">Blog</a> -->
+
+<Header/>
 
 <h1>{pageTitle}</h1>
 <p>Aquí es donde publicaré sobre mi viaje de aprendizaje Astro.</p>
@@ -14,3 +19,5 @@ const pageTitle = "Mi blog de Astro aprendizaje";
     <li><a href="/posts/post-2/">Publicación 2</a></li>
     <li><a href="/posts/post-3/">Publicación 3</a></li>
 </ul>
+
+<Footer></Footer>

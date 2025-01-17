@@ -1,13 +1,17 @@
 ---
 import astroLogo from '../assets/astro.svg';
 import background from '../assets/background.svg';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
 
 const pageTitle = "Página de inicio";
 ---
 
-<a href="/">Inicio</a>
+<!-- <a href="/">Inicio</a>
 <a href="/about/">Sobre mi</a>
-<a href="/blog/">Blog</a>
+<a href="/blog/">Blog</a> -->
+
+<Header />
 
 <div id="container">
 	<img id="background" src={background.src} alt="" fetchpriority="high" />
@@ -47,6 +51,8 @@ const pageTitle = "Página de inicio";
 		</p>
 	</a>
 </div>
+
+<Footer></Footer>
 
 <style>
 	#background {
