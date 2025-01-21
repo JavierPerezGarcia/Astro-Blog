@@ -1,8 +1,8 @@
 ---
 import astroLogo from '../assets/astro.svg';
 import background from '../assets/background.svg';
-import Header from './Header.astro';
-import Footer from './Footer.astro';
+/* import Header from './Header.astro';
+import Footer from './Footer.astro'; */
 
 const pageTitle = "Página de inicio";
 ---
@@ -11,13 +11,13 @@ const pageTitle = "Página de inicio";
 <a href="/about/">Sobre mi</a>
 <a href="/blog/">Blog</a> -->
 
-<Header />
+<!-- <Header /> -->
 
 <div id="container">
 	<img id="background" src={background.src} alt="" fetchpriority="high" />
 	<main>
 		<section id="hero">
-			<h1>{pageTitle}</h1>
+			<!-- <h1>{pageTitle}</h1> -->
 			<a href="https://astro.build"
 				><img src={astroLogo.src} width="115" height="48" alt="Astro Homepage" /></a
 			>
@@ -52,7 +52,7 @@ const pageTitle = "Página de inicio";
 	</a>
 </div>
 
-<Footer></Footer>
+<!-- <Footer></Footer> -->
 
 <style>
 	#background {

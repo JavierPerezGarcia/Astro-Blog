@@ -1,4 +1,5 @@
 ---
+import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 ---
 
@@ -7,17 +8,18 @@ const { frontmatter } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 	</head>
-	<body>
-		<h1>{frontmatter.title}</h1>
+	<BaseLayout pageTitle={frontmatter.title}>
+		<!-- <h1>{frontmatter.title}</h1> -->
         <p>Publicado el: {frontmatter.pubDate.toString().slice(0,10)}</p>
+        <p><em>{frontmatter.description}</em></p>
         <p>Escrito por {frontmatter.author}</p>
         <img src={frontmatter.image.url} witdh="300" alt={frontmatter.image.alt}/>
         <slot />
-	</body>
+	</BaseLayout>
 </html>
 
 <style>
-    html{
+    /* html{
         background-color:chocolate;
-    }
+    } */
 </style>

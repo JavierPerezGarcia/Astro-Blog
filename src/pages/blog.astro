@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import MyBlog from '../components/MyBlog.astro';
+import BlogPost from '../components/BlogPost.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -9,10 +9,28 @@ import '../styles/global.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle ="Mi blog de Astro aprendizaje";
+const allPosts = await Astro.glob('../pages/posts/*.md');
+
+console.log(allPosts);
+allPosts.forEach((post) => {
+	console.log(post.frontmatter) //Sirve para ver exactamente lo que contiene en el frontmatter de cada markdown
+})
+
+console.log(allPosts[2].frontmatter.title); //Ejemplo del tutorial pero allPosts en vez de myPosts
+
+
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<MyBlog />
+	<p>Aquí es donde publicaré sobre mi viaje de aprendizaje de Astro.</p>
+	<ul>
+		<!-- <li><a href="/posts/post-1">Publicación 1</a></li>
+		<li><a href="/posts/post-2">Publicación 2</a></li>
+		<li><a href="/posts/post-3">Publicación 3</a></li> -->
+		<!-- {allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)} -->
+		{allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+	</ul>
+	<!-- <MyBlog /> -->
 </BaseLayout>
 
 <script>
